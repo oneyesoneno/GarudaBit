@@ -1,2 +1,2 @@
 # Garudabit 
-merupakan proyek riang bersama sebagai refensi edukasi untuk mendalami serta mengembangkan industri blockchain
+Merupakan proyek riang bersama sebagai refensi edukasi untuk mendalami serta mengembangkan industri blockchain lebih dalam lagi.
