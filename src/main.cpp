@@ -21,8 +21,8 @@ using namespace boost;
 //
 // Global state
 //
-static const uint256 hashGenesisBlockOfficial("0x000000d78e35e381ca738ceb855b9faf528f0970d994ce4eb4560b56cbe2f6c4");
-static const uint256 hashGenesisBlockTestNet ("0x0000013585f2f416fae10cb9dfe7b93f4628802c27fab1ce54e6a47ead252568");
+static const uint256 hashGenesisBlockOfficial("0x000000924609816d93dd2df074a82170bdf95b09fc9e89a456866127470f7340");
+static const uint256 hashGenesisBlockTestNet ("0x000005cd3a1995759843831b4e5564d02990b3f2c4e29cb0a1e9a30455830c99");
 
 CCriticalSection cs_setpwalletRegistered;
 set<CWallet*> setpwalletRegistered;
@@ -2258,15 +2258,15 @@ bool LoadBlockIndex(bool fAllowNew)
         //   vMerkleTree: 4a5e1e
 
         // Genesis block
-        const char* pszTimestamp = "intentionally broken genesis block - build is for public testnet only!";
-        unsigned int nTimeGenesis=1231231231;
-        unsigned int nNonceGenesis=123123;
+        const char* pszTimestamp = "Mainnet 9 September 2017";
+        unsigned int nTimeGenesis=1504942450;
+        unsigned int nNonceGenesis=1234959;
 
         if (fTestNet)
         {
-            pszTimestamp="April 2, 2014 Supreme Court Strikes Down Overall Campaign Contribution Limits";
-            nTimeGenesis=1396491392;
-            nNonceGenesis=1130877;
+            pszTimestamp="Testnet 9 September 2017";
+            nTimeGenesis=1504942450;
+            nNonceGenesis=628500;
         }
 
 
@@ -2310,9 +2310,9 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
         if (!fTestNet)
-            assert(block.hashMerkleRoot == uint256("0xf88246c72a053cc2176dbf2ac773bcf79f021bba9c2c3c8fccc0735c37d9354c"));
+            assert(block.hashMerkleRoot == uint256("0x85f8a3aee72cf22ca047190e918f5ea5176a0b854a1374fca208690ddb13d48e"));
         else
-            assert(block.hashMerkleRoot == uint256("0xde9e0c68d6503ae8c0c3d368b200dfc403192cdf926041565fe9de22be8ee1a4"));
+            assert(block.hashMerkleRoot == uint256("0x35614b173b372e59ec57436d39a0e06a4b7253a7cfa8bf8402372786b125860e"));
 
         block.print();
         assert(block.GetHash() == hashGenesisBlock);
